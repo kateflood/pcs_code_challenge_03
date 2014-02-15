@@ -1,7 +1,8 @@
+require 'pry'
 
 class Parse
 
-  def self.parse_names (prefixes, suffixes, name_string)
+  def self.parse (prefixes, suffixes, name_string)
 
     parsed_name = {pre:"", first:"", middle:"", last:"", suffix:""}
 
@@ -12,7 +13,7 @@ class Parse
     word = name_string.split
     parsed_name[:suffix] = word.pop if suffixes.include? word.last
     parsed_name[:last] = word.pop
-    parsed_name[:prefix] = word.shift if prefixes.include? word.first
+    parsed_name[:pre] = word.shift if prefixes.include? word.first
     parsed_name[:first] = word.shift if word.first
     parsed_name[:middle] = word.shift if word.first 
 
