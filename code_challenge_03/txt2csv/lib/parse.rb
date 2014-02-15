@@ -6,10 +6,6 @@ class Parse
 
     parsed_name = {pre:"", first:"", middle:"", last:"", suffix:""}
 
-    # get the last word and see if it's a suffix
-    # if so, save as suffix and store the next to last word as last_name
-    # otherwise store last word as last name
-
     word = name_string.split
     parsed_name[:suffix] = word.pop if suffixes.include? word.last
     parsed_name[:last] = word.pop
@@ -32,12 +28,20 @@ class Parse
     parsed_phone[:line] = serialized_phone.shift
     parsed_phone[:ext] = serialized_phone.shift if serialized_phone.first
 
-
     parsed_phone.values
   end
 
   def self.parse_twitter (twitter_string)
     parsed_twitter = [twitter_string.match(/(?!@)(\S+)/).to_s]
   end
-  
+
+  def self.parse_email (email_string)
+    email_validate = (email_string).match(/[(?!@)\w|\.]+@\w+.\w+/)
+    if email_validate
+      parsed_email = [email_validate.to_s]
+    else
+      parsed_email =['Not Found']
+    end
+  end
+
 end

@@ -1,11 +1,6 @@
 require 'spec_helper'
 require 'parse.rb'
 
-# it "should parse last names" do   
-#   return_array = Parse.parse(prefixes, suffixes, "Madona")
-#   expect(return_array).to eq(["","","","Madona",""])
-# end
-
 describe 'Phone parser' do
 
   it 'should parse country codes' do
