@@ -35,4 +35,9 @@ class Parse
 
     parsed_phone.values
   end
+
+  def self.parse_twitter (twitter_string)
+    parsed_twitter = [twitter_string.match(/(?!@)(\S+)/).to_s]
+  end
+  
 end
