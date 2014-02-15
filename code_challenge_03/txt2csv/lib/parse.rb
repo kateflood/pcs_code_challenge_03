@@ -2,7 +2,7 @@ require 'pry'
 
 class Parse
 
-  def self.parse (prefixes, suffixes, name_string)
+  def self.parse_name (prefixes, suffixes, name_string)
 
     parsed_name = {pre:"", first:"", middle:"", last:"", suffix:""}
 
@@ -20,4 +20,7 @@ class Parse
     parsed_name.values
   end
 
+  def self.parse_phone
+
+  end
 end
