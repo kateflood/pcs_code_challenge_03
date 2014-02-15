@@ -14,31 +14,26 @@ describe 'Phone parser' do
   end
 
   it 'should parse area codes' do
-    pending
     return_array = Parse.parse_phone('234-567-8910')
     expect(return_array[1]).to eq('234')
   end
 
   it 'should parse phone prefixes' do
-    pending
     return_array = Parse.parse_phone('1-234-567-8910 x456')
     expect(return_array[2]).to eq('567')
   end
 
   it 'should parse lines' do
-    pending
     return_array = Parse.parse_phone('1-234-567-8910')
     expect(return_array[3]).to eq('8910')
   end
 
   it 'should parse extensions' do
-    pending
     return_array = Parse.parse_phone('1-234-567-8910 x998')
     expect(return_array[4]).to eq('998')
   end
 
   it 'should parse whole phone numbers' do
-    pending
     return_array = Parse.parse_phone('1-234-567-8910 x456')
     expect(return_array).to eq(['1', '234', '567', '8910', '456'])
   end
